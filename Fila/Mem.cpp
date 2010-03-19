@@ -25,9 +25,9 @@ using namespace std;
 
 int main()
 {
-	FilaEnc<char> f;
+	FilaEnc<bool> f;
 	bool ok = true;
-	unsigned double i = 0;
+	double i = 0;
 
 	cout << endl;
 
@@ -35,8 +35,9 @@ int main()
 	{
 		try
 		{
-			f.insere(i);
+			f.insere(1);
 			i = i + 1;
+			cout << i << endl;
 		}
 		catch(logic_error)
 		{

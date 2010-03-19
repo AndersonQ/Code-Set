@@ -1,4 +1,4 @@
-all:
+all: s e kalc eq
 	g++ -c PilhaSeq.h
 	g++ -c PilhaEnc.h
 
@@ -12,11 +12,14 @@ calc: PilhaEnc.h Calc.cpp
 	clear
 	g++ -Wall -g Calc.cpp -o Calc
 
-kalc: PilhaEnc.h Kalc.cpp
-	g++ -Wall -g Kalc.cpp -o Kalc
+kalc: PilhaEnc.h kalc.cpp
+	g++ -Wall -g kalc.cpp -o Kalc
 
-eq:
-	g++ -Wall -g Eq.cpp -o Eq
+eq: PilhaEnc.h eq.cpp
+	g++ -Wall -g eq.cpp -o Eq
+
+flood: PilhaEnc.h floodFill.cpp
+	g++ -Wall -g floodFill.cpp -o FloodFill.cpp
 
 clear:
-	rm -f Calc Kalc *.gch *.backup *~ Ponto2D_Enc Ponto2D_Seq Eq
+	rm -v -f Calc Kalc *.gch *.backup *~ Ponto2D_Enc Ponto2D_Seq Eq

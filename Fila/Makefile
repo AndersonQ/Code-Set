@@ -1,4 +1,4 @@
-all: s e Time Men
+all: s e Tempo Men
 	g++ -Wall -c *.h
 
 s: SeqFila.h SeqFilaTes.cpp
@@ -7,12 +7,12 @@ s: SeqFila.h SeqFilaTes.cpp
 e: EncFila.h EncFilaTes.cpp
 	g++ -Wall -g EncFilaTes.cpp -o EncFilaTes
 
-Time: Time.cpp EncFila.h SeqFila.h
-	g++ -Wall -g Time.cpp -o Time
+Tempo: Tempo.cpp EncFila.h SeqFila.h Timer.cpp
+	g++ -Wall -g Tempo.cpp -o Tempo
 
 Men: Mem.cpp EncFila.h
 	g++ -Wall -g Mem.cpp -o Mem
 
 clean:
-	rm -v -f SeqFilaTes SeqFilaTes.ghc EncFilaTes EncFilaTes.ghc Time *.gch
+	rm -v -f SeqFilaTes SeqFilaTes.ghc EncFilaTes EncFilaTes.ghc Tempo Mem *.gch
 	rm -v *.backup*
